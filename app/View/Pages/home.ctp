@@ -17,9 +17,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-if (!Configure::read('debug')):
-	throw new NotFoundException();
-endif;
 App::uses('Debugger', 'Utility');
 ?>
 <h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
