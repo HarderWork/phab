@@ -224,7 +224,7 @@ if (!env('APP_NAME')) {
  *
  */
 	Configure::write('Session', [
-		'defaults' => 'php'
+		'defaults' => 'cache'
 	]);
 
 /**
@@ -280,12 +280,13 @@ if (!env('APP_NAME')) {
 /**
  * Configure Cache from environment variables
  */
+	var_dump($_SERVER['DYNO']);
 	Cache::config('default', CacheDsn::parse(env('CACHE_URL')));
 	Cache::config('debug_kit', CacheDsn::parse(env('CACHE_DEBUG_KIT_URL')));
 	Cache::config('_cake_core_', CacheDsn::parse(env('CACHE_CAKE_CORE_URL')));
 	Cache::config('_cake_model_', CacheDsn::parse(env('CACHE_CAKE_MODEL_URL')));
 	var_dump(Cache::config('default'));
-	var_dump($_SERVER['DYNO']);
+
 /**
  * Configure logs from environment variables
  */
